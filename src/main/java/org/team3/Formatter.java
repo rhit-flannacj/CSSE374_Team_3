@@ -3,7 +3,8 @@ package org.team3;
 import java.util.ArrayList;
 
 public class Formatter {
-    public String  format(ArrayList<MyClass> classes) {
+    UMLDisplay umlDisplay = new UMLDisplay();
+    public void format(ArrayList<MyClass> classes) throws Exception {
         String uml = "@startuml\n";
         for (MyClass curClass : classes) {
             if(curClass.isInterface) {
@@ -30,7 +31,7 @@ public class Formatter {
         }
         uml += "@enduml";
         System.out.println(uml);
-        return uml;
+        umlDisplay.renderUML(uml);
     }
 }
 

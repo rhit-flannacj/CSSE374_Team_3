@@ -47,7 +47,11 @@ public class ControllerDisplay {
                     }
                 }
                 frame.dispose();
-                Compiler compiler = new Compiler(path, selected);
+                try {
+                    Compiler compiler = new Compiler(path, selected);
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
         frame.add(select);

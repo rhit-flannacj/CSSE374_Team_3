@@ -4,22 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="646677de-271c-4ed2-9fb8-9b68e8491737" name="Changes" comment="more fixes">
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/team3/Analyzer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/team3/Compiler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/team3/ControllerDisplay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/team3/ControllerWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/team3/DecoratorDetectionRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/team3/Formatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/team3/MyClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/team3/Scraper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/team3/SingletonDetectionRule.java" afterDir="false" />
+    <list default="true" id="646677de-271c-4ed2-9fb8-9b68e8491737" name="Changes" comment="Many Edits Needed">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/team3/Encoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/team3/UMLDisplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/team3/MainTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/Compiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/ControllerDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/ControllerDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/Formatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/Formatter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +87,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/flannacj/IdeaProjects/CSSE374_Team_3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -169,7 +161,8 @@
       <updated>1739223247246</updated>
       <workItem from="1739223248331" duration="2000" />
       <workItem from="1739297167709" duration="1058000" />
-      <workItem from="1739298794695" duration="7015000" />
+      <workItem from="1739298794695" duration="7306000" />
+      <workItem from="1739383295527" duration="391000" />
     </task>
     <task id="LOCAL-00001" summary="Gradle Setup">
       <option name="closed" value="true" />
@@ -187,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739299178722</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Many Edits Needed">
+      <option name="closed" value="true" />
+      <created>1739325160582</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739325160582</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +208,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Gradle Setup" />
     <MESSAGE value="more fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="more fixes" />
+    <MESSAGE value="Many Edits Needed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Many Edits Needed" />
   </component>
 </project>
