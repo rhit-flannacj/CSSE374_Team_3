@@ -9,7 +9,7 @@ public class ControllerWorker {
     public ControllerWorker(String filePath) {
         this.filePath = filePath;
         fillRules();
-        System.out.println(filePath);
+        analyzeCode();
     }
 
     public void fillRules() {
@@ -17,4 +17,10 @@ public class ControllerWorker {
         rules.add(new SingletonDetectionRule());
     }
 
+     public void analyzeCode() {
+        for (Analyzer rule : rules) {
+            rule.analyze(filePath);
+        }
+
+}
 }
