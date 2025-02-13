@@ -9,10 +9,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Compiler {
+    ArrayList<Analyzer> selectedRules;
 
     public Compiler(String path, ArrayList<Analyzer> selectedRules) throws Exception {
         File directory = new File(path);
         createData(directory);
+        this.selectedRules = selectedRules;
     }
 
     public static void createData(File directory) throws Exception {

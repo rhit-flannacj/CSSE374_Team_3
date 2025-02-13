@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 import java.io.IOException;
 import java.util.*;
 
-class DecoratorDetectionRule implements Analyzer {
+class   DecoratorDetectionRule implements Analyzer {
     @Override
     public void analyze(String filePath) {
         try {

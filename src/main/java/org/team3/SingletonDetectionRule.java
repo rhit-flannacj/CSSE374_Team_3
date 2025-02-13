@@ -27,6 +27,8 @@ class SingletonDetectionRule implements Analyzer {
                     if ((access & Opcodes.ACC_STATIC) != 0 && descriptor.contains("(")) {
                         hasStaticGetter = true;
                     }
+
+
                     return super.visitMethod(access, name, descriptor, signature, exceptions);
                 }
 
