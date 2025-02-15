@@ -4,7 +4,11 @@ import java.util.ArrayList;
 
 public class Formatter {
     UMLDisplay umlDisplay = new UMLDisplay();
-    public void format(ArrayList<MyClass> classes) throws Exception {
+    private static Formatter formatter;
+
+    private Formatter() {}
+
+    public void format(ArrayList<MyClass> classes, ArrayList<Analyzer> selectedRules) throws Exception {
         String uml = "@startuml\n";
         for (MyClass curClass : classes) {
             if(curClass.isInterface) {
@@ -30,8 +34,16 @@ public class Formatter {
             }
         }
         uml += "@enduml";
-        System.out.println(uml);
+        //System.out.println(uml);
         umlDisplay.renderUML(uml);
     }
+
+    public static Formatter getInstance(){
+        if (formatter == null) {
+            formatter = new Formatter();
+        }
+        return formatter;
+    }
+
 }
 

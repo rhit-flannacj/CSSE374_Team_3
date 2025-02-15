@@ -9,16 +9,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Compiler {
-    ArrayList<Analyzer> selectedRules;
+    private ArrayList<Analyzer> selectedRules;
+    private static Compiler compiler;
+    private static ArrayList<MyClass> classes;
 
-    public Compiler(String path, ArrayList<Analyzer> selectedRules) throws Exception {
-        File directory = new File(path);
-        createData(directory);
-        this.selectedRules = selectedRules;
+    private Compiler()  {
     }
 
-    public static void createData(File directory) throws Exception {
-        ArrayList<MyClass> classes = new ArrayList<>();
+    public void createData(String path, ArrayList<Analyzer> selectedRules) throws Exception {
+        File directory = new File(path);
+        classes = new ArrayList<>();
         for (File file : directory.listFiles()) {
             if (file.getName().endsWith(".class")) {
                 MyClass newClass = new MyClass();
@@ -26,8 +26,7 @@ public class Compiler {
                 classes.add(newClass);
             }
         }
-        Formatter formatter = new Formatter();
-        formatter.format(classes);
+        Formatter.getInstance().format(classes, selectedRules);
     }
 
     public static void analyze(File classFile, MyClass newClass, File directory) {
@@ -37,5 +36,12 @@ public class Compiler {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static Compiler getInstance(){
+        if (compiler == null) {
+            compiler = new Compiler();
+        }
+        return compiler;
     }
 }

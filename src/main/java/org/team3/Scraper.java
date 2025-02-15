@@ -35,6 +35,7 @@ public class Scraper extends ClassVisitor {
     @Override
     public MethodVisitor visitMethod(int access, String name, String descriptor, String signature, String[] exceptions) {
         newClass.methods.add(" - " + name + " : " + descriptor.substring(descriptor.lastIndexOf('/') + 1));
+
         if ((access & Opcodes.ACC_PRIVATE) != 0 && name.equals("<init>")) {
             hasPrivateConstructor = true;
         }
@@ -42,8 +43,27 @@ public class Scraper extends ClassVisitor {
             hasStaticGetter = true;
         }
 
-        return super.visitMethod(access, name, descriptor, signature, exceptions);
+        return new MethodVisitor(Opcodes.ASM9, super.visitMethod(access, name, descriptor, signature, exceptions)) {
+            @Override
+            public void visitTypeInsn(int opcode, String type) {
+                if (opcode == Opcodes.NEW) {
+                    // Detected an object creation, so it's an association
+                    newClass.associations.add(type.replace("/", "."));
+                }
+                super.visitTypeInsn(opcode, type);
+            }
+
+            @Override
+            public void visitMethodInsn(int opcode, String owner, String name, String descriptor, boolean isInterface) {
+                if (!owner.startsWith("java/")) {
+                    // If the method call is to a non-Java standard class, it's an association
+                    newClass.associations.add(owner.replace("/", "."));
+                }
+                super.visitMethodInsn(opcode, owner, name, descriptor, isInterface);
+            }
+        };
     }
+
 
     @Override
     public FieldVisitor visitField(int access, String name, String descriptor, String signature, Object value) {
