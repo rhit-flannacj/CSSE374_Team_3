@@ -6,12 +6,14 @@ public class Formatter {
     private UMLDisplay umlDisplay = new UMLDisplay();
     private ArrayList<MyClass> classes;
     private String uml;
+    private static Formatter formatter;
 
-    public Formatter(ArrayList<MyClass> classes) {
-        this.classes = classes;
+    private Formatter() {
     }
-    public void format(ArrayList<Analyzer> rules) throws Exception {
-        compileClassDetails(rules);
+
+    public void format(ArrayList<MyClass> classes, ArrayList<Analyzer> selectedRules) throws Exception {
+        this.classes = classes;
+        compileClassDetails(selectedRules);
         uml = "@startuml\n";
         for (MyClass curClass : classes) {
             classHead(curClass);
@@ -24,8 +26,15 @@ public class Formatter {
             dependencies(curClass);
         }
         uml += "@enduml";
-        //System.out.println(uml);
+        System.out.println(uml);
         umlDisplay.renderUML(uml);
+    }
+
+    public static Formatter getInstance(){
+        if (formatter == null) {
+            formatter = new Formatter();
+        }
+        return formatter;
     }
 
     private void compileClassDetails(ArrayList<Analyzer> rules) {
