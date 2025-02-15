@@ -79,7 +79,7 @@ public class Formatter {
 
     private void associations(MyClass curClass) {
         for (String curAssociation : curClass.associations) {
-            uml += curAssociation + " <-- " + curClass.className + "\n";
+            uml += curAssociation + " <-- " + curClass.lineColor + " " + curClass.className + "\n";
         }
     }
 
@@ -91,7 +91,7 @@ public class Formatter {
                     temp = temp.substring(0, temp.length() - 1);
                 }
                 if(temp.equals(tempClass.className) && !curClass.className.equals(tempClass.className)) {
-                    uml += tempClass.className + " <-up- " + curClass.className + "\n";
+                    uml += tempClass.className + " <-up- " + curClass.lineColor + " " + curClass.className + "\n";
                     break;
                 }
             }

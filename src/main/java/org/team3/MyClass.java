@@ -16,4 +16,5 @@ public class MyClass {
     public boolean isDecorator;
     public String color = "";
     public String additionalText = "";
+    public String lineColor = "";
 }
