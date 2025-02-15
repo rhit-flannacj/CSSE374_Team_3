@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="646677de-271c-4ed2-9fb8-9b68e8491737" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/Analyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/Analyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/Compiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/ControllerDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/ControllerDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/DecoratorDetectionRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/DecoratorDetectionRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/Formatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/Formatter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/MyClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/MyClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/Scraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/Scraper.java" afterDir="false" />
@@ -33,10 +34,42 @@
     </system>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Colins-Test" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1739646467" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="Colins-Test" />
+                    <option name="lastUsedInstant" value="1739477941" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="max-singleton-decorator" />
+                    <option name="lastUsedInstant" value="1739477940" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
