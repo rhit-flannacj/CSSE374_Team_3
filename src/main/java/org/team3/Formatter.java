@@ -24,7 +24,7 @@ public class Formatter {
             dependencies(curClass);
         }
         uml += "@enduml";
-        System.out.println(uml);
+        //System.out.println(uml);
         umlDisplay.renderUML(uml);
     }
 

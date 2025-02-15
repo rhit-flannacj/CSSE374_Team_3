@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class ControllerDisplay {
-
     //From Colin Flannagan Hw3
     //Following section from https://www.geeksforgeeks.org/java-swing-jfilechooser/
     public String findFilePath() {
@@ -48,7 +47,7 @@ public class ControllerDisplay {
                 }
                 frame.dispose();
                 try {
-                    Compiler compiler = new Compiler(path, selected);
+                    Compiler.getInstance().createData(path, selected);
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }

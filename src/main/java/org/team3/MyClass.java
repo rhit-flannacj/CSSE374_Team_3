@@ -1,6 +1,8 @@
 package org.team3;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class MyClass {
     public String className;
@@ -8,7 +10,7 @@ public class MyClass {
     public ArrayList<String> interfaces = new ArrayList<>();
     public ArrayList<String> fields = new ArrayList<>();
     public ArrayList<String> methods = new ArrayList<>();
-    public ArrayList<String> associations = new ArrayList<>();
+    public Set<String> associations = new HashSet<>();
     public boolean isInterface;
     public boolean isSingleton;
     public boolean isDecorator;

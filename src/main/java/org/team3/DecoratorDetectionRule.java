@@ -1,6 +1,5 @@
 package org.team3;
 
-
 class DecoratorDetectionRule implements Analyzer {
 
     public DecoratorDetectionRule() {
