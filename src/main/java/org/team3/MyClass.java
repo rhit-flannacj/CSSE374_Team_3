@@ -10,4 +10,8 @@ public class MyClass {
     public ArrayList<String> methods = new ArrayList<>();
     public ArrayList<String> associations = new ArrayList<>();
     public boolean isInterface;
+    public boolean isSingleton;
+    public boolean isDecorator;
+    public String color = "";
+    public String additionalText = "";
 }

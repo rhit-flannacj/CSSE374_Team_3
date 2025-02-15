@@ -9,13 +9,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Compiler {
+    private ArrayList<Analyzer> selectedRules;
 
     public Compiler(String path, ArrayList<Analyzer> selectedRules) throws Exception {
+        this.selectedRules = selectedRules;
         File directory = new File(path);
         createData(directory);
     }
 
-    public static void createData(File directory) throws Exception {
+    public void createData(File directory) throws Exception {
         ArrayList<MyClass> classes = new ArrayList<>();
         for (File file : directory.listFiles()) {
             if (file.getName().endsWith(".class")) {
@@ -24,8 +26,8 @@ public class Compiler {
                 classes.add(newClass);
             }
         }
-        Formatter formatter = new Formatter();
-        formatter.format(classes);
+        Formatter formatter = new Formatter(classes);
+        formatter.format(selectedRules);
     }
 
     public static void analyze(File classFile, MyClass newClass, File directory) {
