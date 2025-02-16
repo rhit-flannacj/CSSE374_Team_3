@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Formatter {
     private UMLDisplay umlDisplay = new UMLDisplay();
     private ArrayList<MyClass> classes;
+    private ArrayList<String> classNames = new ArrayList<>();
     private String uml;
     private static Formatter formatter;
 
@@ -13,6 +14,7 @@ public class Formatter {
 
     public void format(ArrayList<MyClass> classes, ArrayList<Analyzer> selectedRules) throws Exception {
         this.classes = classes;
+        fill();
         compileClassDetails(selectedRules);
         uml = "@startuml\n";
         for (MyClass curClass : classes) {
@@ -23,11 +25,19 @@ public class Formatter {
             supperClasses(curClass);
             interfaces(curClass);
             associations(curClass);
-            dependencies(curClass);
         }
         uml += "@enduml";
         System.out.println(uml);
         umlDisplay.renderUML(uml);
+    }
+
+    private void fill() {
+        for (MyClass myClass : classes) {
+            if (myClass.className.endsWith("$1")) {
+                myClass.className = myClass.className.substring(0, myClass.className.length() - 2);
+            }
+            classNames.add(myClass.className);
+        }
     }
 
     public static Formatter getInstance(){
@@ -67,32 +77,25 @@ public class Formatter {
 
     private void supperClasses(MyClass curClass) {
         if (curClass.supperClassName != null) {
-            uml += curClass.supperClassName + " <|-- " + curClass.className + "\n";
+            uml += curClass.supperClassName + " <|-up- " + curClass.className + "\n";
         }
     }
 
     private void interfaces(MyClass curClass) {
         for (String curInterface : curClass.interfaces) {
-            uml += curInterface.substring(curInterface.lastIndexOf("/") + 1) + " <-. " + curClass.className + "\n";
+            uml += curInterface.substring(curInterface.lastIndexOf("/") + 1) + " <-up. " + curClass.className + "\n";
         }
     }
 
     private void associations(MyClass curClass) {
         for (String curAssociation : curClass.associations) {
-            uml += curAssociation + " <-- " + curClass.lineColor + " " + curClass.className + "\n";
-        }
-    }
-
-    private void dependencies(MyClass curClass) {
-        for (String curField : curClass.fields) {
-            for(MyClass tempClass : classes) {
-                String temp = curField.substring(curField.indexOf(':') + 2);
-                if(temp.endsWith(";")) {
-                    temp = temp.substring(0, temp.length() - 1);
-                }
-                if(temp.equals(tempClass.className) && !curClass.className.equals(tempClass.className)) {
-                    uml += tempClass.className + " <-up- " + curClass.lineColor + " " + curClass.className + "\n";
-                    break;
+            String associationName = curAssociation.substring(curAssociation.lastIndexOf('.') + 1);
+            if(classNames.contains(associationName) && !associationName.equals(curClass.className)) {
+                for (MyClass assocClass : classes) {
+                    if(assocClass.className.equals(associationName)) {
+                        uml += associationName + " <-up-" + curClass.className + "\n";
+                        break;
+                    }
                 }
             }
         }

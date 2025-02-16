@@ -7,7 +7,7 @@ import java.util.zip.DeflaterOutputStream;
 public class Encoder {
     public String encode(String uml) throws Exception {
         String encoded = encodePlantUML(uml);
-        return "http://www.plantuml.com/plantuml/png/~1" + encoded;
+        return "http://www.plantuml.com/plantuml/svg/~1" + encoded;
     }
 
     private static String encodePlantUML(String uml) throws Exception {

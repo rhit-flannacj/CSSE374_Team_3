@@ -11,7 +11,7 @@ class DecoratorDetectionRule implements Analyzer {
         if(myClass.isDecorator) {
             myClass.color = "#blue";
             myClass.additionalText = "<decorator>";
-            myClass.lineColor = "[#blue]";
+            myClass.lineColor = "[blue]";
         }
     }
 }

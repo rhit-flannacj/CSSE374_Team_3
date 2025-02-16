@@ -23,7 +23,6 @@ public class Scraper extends ClassVisitor {
 
     @Override
     public void visit(int version, int access, String name, String signature, String superName, String[] interfaces) {
-        System.out.println(name);
         newClass.className = name.substring(name.lastIndexOf('/') + 1);
         newClass.isInterface = (access & Opcodes.ACC_INTERFACE) != 0;
         if (!superName.startsWith("java") && !superName.startsWith("org")) {
@@ -71,7 +70,6 @@ public class Scraper extends ClassVisitor {
         if (type.startsWith(path.substring(path.lastIndexOf('/') + 1))) {
             newClass.associations.add(type.substring(type.lastIndexOf('.') + 1));
         } else {
-            System.out.println(type + "   " + path.substring(path.lastIndexOf('/') + 1));
             newClass.fields.add(" - " + name + " : " + descriptor.substring(descriptor.lastIndexOf('/') + 1));
         }
         if ((access & Opcodes.ACC_STATIC) != 0) {
