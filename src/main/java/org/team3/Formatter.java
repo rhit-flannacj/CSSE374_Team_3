@@ -83,7 +83,9 @@ public class Formatter {
 
     private void interfaces(MyClass curClass) {
         for (String curInterface : curClass.interfaces) {
-            uml += curInterface.substring(curInterface.lastIndexOf("/") + 1) + " <-up. " + curClass.className + "\n";
+            if (!curInterface.contains("ActionListener")) {
+                uml += curInterface.substring(curInterface.lastIndexOf("/") + 1) + " <-up. " + curClass.className + "\n";
+            }
         }
     }
 
