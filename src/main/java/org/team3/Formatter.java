@@ -12,10 +12,18 @@ public class Formatter {
     }
 
     public void format(ArrayList<MyClass> classes, ArrayList<Analyzer> selectedRules) throws Exception {
-        this.classes = classes;
+        ArrayList<MyClass> filtered = new ArrayList<>();
+        for (MyClass curClass : classes) {
+            String name = curClass.className;
+            if (name.equalsIgnoreCase("CustomActionListener") || name.equalsIgnoreCase("ActionListener")) {
+                continue;
+            }
+            filtered.add(curClass);
+        }
+        this.classes = filtered;
         compileClassDetails(selectedRules);
         uml = "@startuml\n";
-        for (MyClass curClass : classes) {
+        for (MyClass curClass : this.classes) {
             classHead(curClass);
             classFields(curClass);
             classMethods(curClass);
