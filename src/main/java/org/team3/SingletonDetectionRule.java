@@ -9,7 +9,7 @@ class SingletonDetectionRule implements Analyzer {
     @Override
     public void formatClass(MyClass myClass) {
         if(myClass.isSingleton) {
-            myClass.color = "#lightred";
+            myClass.color = "#red";
             myClass.additionalText = "<singleton>";
             myClass.lineColor = "[#red]";
         }
