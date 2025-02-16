@@ -23,39 +23,25 @@ public class ControllerDisplay {
         ArrayList<JCheckBox> boxes = new ArrayList<>();
         JFrame frame = new JFrame("Select Desired Rules");
         frame.setLayout(new FlowLayout());
-        for(Analyzer rule: rules) {
-             boxes.add(new JCheckBox(rule.getClass().getName().substring(rule.getClass().getName().lastIndexOf('.') + 1)));
+        for (Analyzer rule : rules) {
+            boxes.add(new JCheckBox(rule.getClass().getName().substring(
+                    rule.getClass().getName().lastIndexOf('.') + 1)));
         }
 
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        for(JCheckBox box : boxes) {
-             panel.add(box);
+        for (JCheckBox box : boxes) {
+            panel.add(box);
         }
 
         frame.add(panel);
 
         JButton select = new JButton("Select");
-        select.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                for(JCheckBox box : boxes) {
-                    if(box.isSelected()) {
-                        selected.add(rules.get(boxes.indexOf(box)));
-                    }
-                }
-                frame.dispose();
-                try {
-                    Compiler.getInstance().createData(path, selected);
-                } catch (Exception ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
-        });
+        select.addActionListener(new CustomActionListener(boxes, rules, selected, frame, path));
         frame.add(select);
-        frame.setSize(300,300);
-        frame.show();
+        frame.setSize(300, 300);
+        frame.setVisible(true);
         return selected;
     }
 }

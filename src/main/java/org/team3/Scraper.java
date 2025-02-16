@@ -43,24 +43,9 @@ public class Scraper extends ClassVisitor {
             hasStaticGetter = true;
         }
 
-        return new MethodVisitor(Opcodes.ASM9, super.visitMethod(access, name, descriptor, signature, exceptions)) {
-            @Override
-            public void visitTypeInsn(int opcode, String type) {
-                if (opcode == Opcodes.NEW) {
-                    // Detected an object creation, so it's an association
-                    newClass.associations.add(type.replace("/", "."));
-                }
-                super.visitTypeInsn(opcode, type);
-            }
-
-            @Override
-            public void visitMethodInsn(int opcode, String owner, String name, String descriptor, boolean isInterface) {
-                if (!owner.startsWith("java/")) {
-                    // If the method call is to a non-Java standard class, it's an association
-                    newClass.associations.add(owner.replace("/", "."));
-                }
-                super.visitMethodInsn(opcode, owner, name, descriptor, isInterface);
-            }
+        
+        MethodVisitor parentVisitor = super.visitMethod(access, name, descriptor, signature, exceptions);
+        return new CustomMethodVisitor(Opcodes.ASM9, parentVisitor);
         };
     }
 
