@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="646677de-271c-4ed2-9fb8-9b68e8491737" name="Changes" comment="Find where the project structure stores output files e.x. from my HW &quot;C:\Users\flannacj\Downloads\HW3-JavaCode\out\production\HW3-JavaCode\lab2&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/ControllerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/ControllerWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/Formatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/Formatter.java" afterDir="false" />
-    </list>
+    <list default="true" id="646677de-271c-4ed2-9fb8-9b68e8491737" name="Changes" comment="Singlton detected and passed" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -225,7 +221,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739383803418</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Singlton detected and passed">
+      <option name="closed" value="true" />
+      <created>1739651980221</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739651980221</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +251,8 @@
     <MESSAGE value="more fixes" />
     <MESSAGE value="Many Edits Needed" />
     <MESSAGE value="Find where the project structure stores output files e.x. from my HW &quot;C:\Users\flannacj\Downloads\HW3-JavaCode\out\production\HW3-JavaCode\lab2&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Find where the project structure stores output files e.x. from my HW &quot;C:\Users\flannacj\Downloads\HW3-JavaCode\out\production\HW3-JavaCode\lab2&quot;" />
+    <MESSAGE value="Singlton detected and passed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Singlton detected and passed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
