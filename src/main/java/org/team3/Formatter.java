@@ -17,7 +17,7 @@ public class Formatter {
         fill();
         compileClassDetails(selectedRules);
         uml = "@startuml\n";
-        for (MyClass curClass : classes) {
+        for (MyClass curClass : this.classes) {
             classHead(curClass);
             classFields(curClass);
             classMethods(curClass);

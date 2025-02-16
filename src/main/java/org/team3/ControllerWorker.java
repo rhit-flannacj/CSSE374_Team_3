@@ -12,8 +12,9 @@ public class ControllerWorker {
     }
 
     public void fillRules() {
-        rules.add(new DecoratorDetectionRule());
-        rules.add(new SingletonDetectionRule());
+        Analyzer base = myClass -> {};
+        rules.add(new SingletonDetectionRule(base));
+        rules.add(new DecoratorDetectionRule(null));
     }
 
 }

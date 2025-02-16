@@ -1,14 +1,14 @@
 package org.team3;
 
-class SingletonDetectionRule implements Analyzer {
+class SingletonDetectionRule extends AnalyzerDecorator {
 
-    public SingletonDetectionRule() {
-        super();
+    public SingletonDetectionRule(Analyzer inner) {
+        super(inner);
     }
 
     @Override
-    public void formatClass(MyClass myClass) {
-        if(myClass.isSingleton) {
+    protected void applyDecoration(MyClass myClass) {
+        if (myClass.isSingleton) {
             myClass.color = "#red";
             myClass.additionalText = "<singleton>";
             myClass.lineColor = "[red]";

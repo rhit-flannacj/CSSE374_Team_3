@@ -1,14 +1,14 @@
 package org.team3;
 
-class DecoratorDetectionRule implements Analyzer {
+public class DecoratorDetectionRule extends AnalyzerDecorator {
 
-    public DecoratorDetectionRule() {
-        super();
+    public DecoratorDetectionRule(Analyzer inner) {
+        super(inner);
     }
 
     @Override
-    public void formatClass(MyClass myClass) {
-        if(myClass.isDecorator) {
+    protected void applyDecoration(MyClass myClass) {
+        if (myClass.isDecorator) {
             myClass.color = "#blue";
             myClass.additionalText = "<decorator>";
             myClass.lineColor = "[blue]";
