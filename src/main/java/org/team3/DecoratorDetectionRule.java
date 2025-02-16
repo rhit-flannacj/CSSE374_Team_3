@@ -9,7 +9,7 @@ class DecoratorDetectionRule implements Analyzer {
     @Override
     public void formatClass(MyClass myClass) {
         if(myClass.isDecorator) {
-            myClass.color = "#lightblue";
+            myClass.color = "#blue";
             myClass.additionalText = "<decorator>";
             myClass.lineColor = "[#blue]";
         }
