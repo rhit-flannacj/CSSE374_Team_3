@@ -11,7 +11,7 @@ class SingletonDetectionRule extends AnalyzerDecorator {
         if (myClass.isSingleton) {
             myClass.color = "#red";
             myClass.additionalText = "<singleton>";
-            myClass.lineColor = "[#red]";
+            myClass.lineColor = "[red]";
         }
     }
 }
