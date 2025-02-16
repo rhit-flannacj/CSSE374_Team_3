@@ -46,9 +46,8 @@ public class Scraper extends ClassVisitor {
         
         MethodVisitor parentVisitor = super.visitMethod(access, name, descriptor, signature, exceptions);
         return new CustomMethodVisitor(Opcodes.ASM9, parentVisitor);
-        };
-    }
-
+        }
+    
 
     @Override
     public FieldVisitor visitField(int access, String name, String descriptor, String signature, Object value) {
