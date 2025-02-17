@@ -27,7 +27,7 @@ public class Formatter {
             associations(curClass);
         }
         uml += "@enduml";
-        System.out.println(uml);
+//        System.out.println(uml);
         umlDisplay.renderUML(uml);
     }
 
