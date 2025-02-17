@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="646677de-271c-4ed2-9fb8-9b68e8491737" name="Changes" comment="Singlton detected and passed">
+    <list default="true" id="646677de-271c-4ed2-9fb8-9b68e8491737" name="Changes" comment="Scraper now detects singleton">
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Changes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Changes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2_13_2025_3_18_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2_13_2025_3_18_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2_15_2025_2_07_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2_15_2025_2_07_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/UMLDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/UMLDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/CustomMethodVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/CustomMethodVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/MyClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/MyClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/Scraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/Scraper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,11 +115,15 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Gradle.Build CSSE374_Team_3.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.CSSE374_Team_3 [:Controller.main()].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.CSSE374_Team_3 [:Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CSSE374_Team_3 [:org.team3.Controller.main()].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.CSSE374_Team_3 [build].executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.org.team3 in CSSE374_Team_3.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;please&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -173,8 +177,23 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="org.team3 in CSSE374_Team_3.main" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSSE374_Team_3.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.team3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.team3" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.org.team3 in CSSE374_Team_3.main" />
         <item itemvalue="Gradle.CSSE374_Team_3 [build]" />
         <item itemvalue="Application.Controller" />
         <item itemvalue="Gradle.CSSE374_Team_3 [build]" />
@@ -182,6 +201,14 @@
         <item itemvalue="Gradle.CSSE374_Team_3 [build]" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
