@@ -17,4 +17,5 @@ public class MyClass {
     public String color = "";
     public String additionalText = "";
     public String lineColor = "";
+    public int isPotentialDecorator;
 }
