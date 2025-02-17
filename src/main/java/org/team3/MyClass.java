@@ -14,6 +14,7 @@ public class MyClass {
     public boolean isInterface;
     public boolean isSingleton;
     public boolean isDecorator;
+    public int isPotentialDecorator = 0;
     public String color = "";
     public String additionalText = "";
     public String lineColor = "";

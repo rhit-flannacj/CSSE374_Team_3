@@ -42,11 +42,12 @@ public class Scraper extends ClassVisitor {
             hasStaticGetter = true;
         }
 
-        
+
         MethodVisitor parentVisitor = super.visitMethod(access, name, descriptor, signature, exceptions);
-        return new CustomMethodVisitor(Opcodes.ASM9, parentVisitor);
-        }
-    
+        return new CustomMethodVisitor(Opcodes.ASM9, parentVisitor, newClass);
+        
+    }
+
 
     @Override
     public FieldVisitor visitField(int access, String name, String descriptor, String signature, Object value) {
@@ -68,11 +69,9 @@ public class Scraper extends ClassVisitor {
             System.out.println("Detected Singleton Pattern: " + this.newClass.className);
             this.newClass.isSingleton = true;
         }
-        for (String i : newClass.interfaces) {
-            if (fields.contains(i)) {
-                System.out.println("Detected Decorator Pattern: " + this.newClass.className);
-                this.newClass.isSingleton = true;
-            }
+        if (newClass.isPotentialDecorator > 1){
+            System.out.println("Detected Decorator Pattern: " + this.newClass.className);
+            this.newClass.isDecorator = true;
         }
     }
 }
