@@ -16,6 +16,7 @@ public class Formatter {
         this.classes = classes;
         fill();
         compileClassDetails(selectedRules);
+        checkDuplicate();
         uml = "@startuml\n";
         for (MyClass curClass : classes) {
             classHead(curClass);
@@ -27,8 +28,21 @@ public class Formatter {
             associations(curClass);
         }
         uml += "@enduml";
-//        System.out.println(uml);
+        System.out.println(uml);
         umlDisplay.renderUML(uml);
+    }
+
+    private void checkDuplicate() {
+        for (MyClass curClass : classes) {
+            for(String association: curClass.associations) {
+                String associationName = association.substring(association.lastIndexOf('.') + 1);
+                for(String curInterface: curClass.interfaces) {
+                    if(curInterface.substring(curInterface.lastIndexOf("/") + 1).equals(associationName)) {
+                        curClass.associations.remove(association);
+                    }
+                }
+            }
+        }
     }
 
     private void fill() {
@@ -57,9 +71,9 @@ public class Formatter {
 
     private void classHead(MyClass curClass) {
         if(curClass.isInterface) {
-            uml += "interface " + curClass.className + curClass.additionalText + curClass.color + " {\n";
+            uml += "interface " + curClass.className + " {\n";
         } else {
-            uml += "class " + curClass.className + curClass.additionalText + curClass.color + " {\n";
+            uml += "class " + curClass.className + " {\n";
         }
     }
 
@@ -84,7 +98,10 @@ public class Formatter {
     private void interfaces(MyClass curClass) {
         for (String curInterface : curClass.interfaces) {
             if (!curInterface.contains("ActionListener")) {
-                uml += curInterface.substring(curInterface.lastIndexOf("/") + 1) + " <-up. " + curClass.className + "\n";
+                uml += curInterface.substring(curInterface.lastIndexOf("/") + 1) + " <|-up[#" + curClass.lineColor + "]. " + curClass.className + "\n";
+                if(!curClass.color.equals("white")) {
+                    uml += "class " + curInterface.substring(curInterface.lastIndexOf("/") + 1) + curClass.additionalText + " " + curClass.color + '\n';
+                }
             }
         }
     }
