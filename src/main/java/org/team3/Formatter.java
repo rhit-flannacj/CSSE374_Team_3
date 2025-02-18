@@ -71,9 +71,9 @@ public class Formatter {
 
     private void classHead(MyClass curClass) {
         if(curClass.isInterface) {
-            uml += "interface " + curClass.className + " {\n";
+            uml += "interface " + curClass.className + curClass.additionalText + curClass.color + " {\n";
         } else {
-            uml += "class " + curClass.className + " {\n";
+            uml += "class " + curClass.className + curClass.additionalText + curClass.color + " {\n";
         }
     }
 
@@ -98,10 +98,7 @@ public class Formatter {
     private void interfaces(MyClass curClass) {
         for (String curInterface : curClass.interfaces) {
             if (!curInterface.contains("ActionListener")) {
-                uml += curInterface.substring(curInterface.lastIndexOf("/") + 1) + " <|-up[#" + curClass.lineColor + "]. " + curClass.className + "\n";
-                if(!curClass.color.equals("white")) {
-                    uml += "class " + curInterface.substring(curInterface.lastIndexOf("/") + 1) + curClass.additionalText + " " + curClass.color + '\n';
-                }
+                uml += curInterface.substring(curInterface.lastIndexOf("/") + 1) + " <-up. " + curClass.className + "\n";
             }
         }
     }

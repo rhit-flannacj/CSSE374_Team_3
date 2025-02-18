@@ -14,6 +14,8 @@ public class ControllerWorker {
     public void fillRules() {
         rules.add(new DecoratorDetectionRule());
         rules.add(new SingletonDetectionRule());
+        rules.add(new DependencieAbuse());
+        rules.add(new SingeltonAbuse());
     }
 
 }
