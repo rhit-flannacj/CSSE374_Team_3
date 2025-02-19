@@ -34,10 +34,10 @@ public class Formatter {
 
     private void checkDuplicate() {
         for (MyClass curClass : classes) {
-            for(String association: curClass.associations) {
+            for (String association : curClass.associations) {
                 String associationName = association.substring(association.lastIndexOf('.') + 1);
-                for(String curInterface: curClass.interfaces) {
-                    if(curInterface.substring(curInterface.lastIndexOf("/") + 1).equals(associationName)) {
+                for (String curInterface : curClass.interfaces) {
+                    if (curInterface.substring(curInterface.lastIndexOf("/") + 1).equals(associationName)) {
                         curClass.associations.remove(association);
                     }
                 }
@@ -54,7 +54,7 @@ public class Formatter {
         }
     }
 
-    public static Formatter getInstance(){
+    public static Formatter getInstance() {
         if (formatter == null) {
             formatter = new Formatter();
         }
@@ -62,16 +62,31 @@ public class Formatter {
     }
 
     private void compileClassDetails(ArrayList<Analyzer> rules) {
-        for (MyClass curClass: classes) {
-            for (Analyzer rule: rules) {
+        for (MyClass curClass : classes) {
+            for (Analyzer rule : rules) {
                 rule.formatClass(curClass);
+            }
+        }
+        for (MyClass decoratorClass : classes) {
+            if (decoratorClass.isDecorator && !decoratorClass.interfaces.isEmpty()) {
+                for (String ifcPath : decoratorClass.interfaces) {
+                    String ifcDots = ifcPath.replace('/', '.');
+                    String ifcName = ifcDots.substring(ifcDots.lastIndexOf('.') + 1);
+                    for (MyClass maybeInterface : classes) {
+                        if (maybeInterface.className.equals(ifcName)) {
+                            maybeInterface.color = " #blue";
+                            maybeInterface.additionalText = " <decorator>";
+                        }
+                    }
+                }
             }
         }
     }
 
     private void classHead(MyClass curClass) {
-        if(curClass.isInterface) {
+        if (curClass.isInterface) {
             uml += "interface " + curClass.className + curClass.additionalText + curClass.color + " {\n";
+            uml += "  .. Table Decorator ..\n";
         } else {
             uml += "class " + curClass.className + curClass.additionalText + curClass.color + " {\n";
         }
@@ -98,18 +113,41 @@ public class Formatter {
     private void interfaces(MyClass curClass) {
         for (String curInterface : curClass.interfaces) {
             if (!curInterface.contains("ActionListener")) {
-                uml += curInterface.substring(curInterface.lastIndexOf("/") + 1) + " <-up. " + curClass.className + "\n";
+                String interfaceName = curInterface.substring(curInterface.lastIndexOf("/") + 1);
+                // Determine if the target interface class has been marked as a decorator interface
+                boolean isDecoratorInterface = classes.stream()
+                        .filter(c -> c.className.equals(interfaceName))
+                        .anyMatch(c -> c.additionalText != null && c.additionalText.contains("<decorator>"));
+                if (curClass.isDecorator && isDecoratorInterface) {
+                    uml += interfaceName + " <-up[#blue]. " + curClass.className + "\n";
+                } else {
+                    uml += interfaceName + " <-up. " + curClass.className + "\n";
+                }
             }
         }
     }
 
+
     private void associations(MyClass curClass) {
         for (String curAssociation : curClass.associations) {
-            String associationName = curAssociation.substring(curAssociation.lastIndexOf('.') + 1);
-            if(classNames.contains(associationName) && !associationName.equals(curClass.className)) {
+            String assoc = curAssociation.replace('/', '.');
+            String associationName = assoc.substring(assoc.lastIndexOf('.') + 1);
+
+            if (classNames.contains(associationName) && !associationName.equals(curClass.className)) {
                 for (MyClass assocClass : classes) {
-                    if(assocClass.className.equals(associationName)) {
-                        uml += associationName + " <-up-" + curClass.className + "\n";
+                    if (assocClass.className.equals(associationName)) {
+                        boolean isDecoratorInterface = curClass.isDecorator &&
+                                curClass.interfaces.stream().anyMatch(ifc -> {
+                                    String ifcDots = ifc.replace('/', '.');
+                                    String ifcName = ifcDots.substring(ifcDots.lastIndexOf('.') + 1);
+                                    return ifcName.equals(associationName);
+                                });
+
+                        if (isDecoratorInterface) {
+                            uml += associationName + " <-up[#blue]. " + curClass.className + "\n"; // Blue color for decorator lines
+                        } else {
+                            uml += associationName + " <-up- " + curClass.className + "\n";
+                        }
                         break;
                     }
                 }
@@ -117,4 +155,3 @@ public class Formatter {
         }
     }
 }
-

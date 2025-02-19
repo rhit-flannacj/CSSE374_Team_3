@@ -68,9 +68,27 @@ public class Scraper extends ClassVisitor {
             System.out.println("Detected Singleton Pattern: " + this.newClass.className);
             this.newClass.isSingleton = true;
         }
-        if (newClass.isPotentialDecorator > 1){
+        if (newClass.isPotentialDecorator > 2 && hasFieldForDecorator(newClass)) {
             System.out.println("Detected Decorator Pattern: " + this.newClass.className);
             this.newClass.isDecorator = true;
         }
+    }
+
+    private boolean hasFieldForDecorator(MyClass newClass) {
+        // For each interface the class implements,
+        // check if any field declaration contains the interface type.
+        if (newClass.fields == null || newClass.fields.isEmpty() || newClass.interfaces.isEmpty()) {
+            return false;
+        }
+        for (String ifcPath : newClass.interfaces) {
+            String ifcName = ifcPath.substring(ifcPath.lastIndexOf('/') + 1);
+            for (String field : newClass.fields) {
+                // The field is stored as " - fieldName : TypeName"
+                if (field.contains(": " + ifcName)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

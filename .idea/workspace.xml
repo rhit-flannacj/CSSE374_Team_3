@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="646677de-271c-4ed2-9fb8-9b68e8491737" name="Changes" comment="Im scared" />
+    <list default="true" id="646677de-271c-4ed2-9fb8-9b68e8491737" name="Changes" comment="Im scared">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/DecoratorDetectionRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/DecoratorDetectionRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/Formatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/Formatter.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,6 +65,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {}
+}]]></component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
     <option name="recentBranches">
@@ -110,11 +117,12 @@
   "keyToString": {
     "Gradle.CSSE374_Team_3 [:Controller.main()].executor": "Run",
     "Gradle.CSSE374_Team_3 [:Main.main()].executor": "Run",
+    "Gradle.CSSE374_Team_3 [:org.team3.Controller.main()].executor": "Run",
     "Gradle.CSSE374_Team_3 [build].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "c23ba4aa",
+    "git-widget-placeholder": "detached3",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/flannacj/Downloads/TryCode2CPS",
     "node.js.detected.package.eslint": "true",
@@ -133,6 +141,9 @@
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.team3" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mahaffmx\CSSE374_Team_3\src\main" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Controller">
