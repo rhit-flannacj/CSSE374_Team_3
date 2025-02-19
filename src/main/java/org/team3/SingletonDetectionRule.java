@@ -14,5 +14,10 @@ class SingletonDetectionRule implements Analyzer {
             myClass.lineColor = "red";
         }
     }
+
+    @Override
+    public void setMax(int max) {
+
+    }
 }
 

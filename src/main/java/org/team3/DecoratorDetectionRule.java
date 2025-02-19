@@ -37,4 +37,9 @@ public class DecoratorDetectionRule implements Analyzer {
             }
         }
     }
+
+    @Override
+    public void setMax(int max) {
+
+    }
 }

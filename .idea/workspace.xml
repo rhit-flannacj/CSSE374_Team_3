@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="646677de-271c-4ed2-9fb8-9b68e8491737" name="Changes" comment="Im scared">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Output/uml.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Output/uml.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/Analyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/Analyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/ControllerDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/ControllerDisplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/DecoratorDetectionRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/DecoratorDetectionRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/Formatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/Formatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/DependencieAbuse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/DependencieAbuse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/SingeltonAbuse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/SingeltonAbuse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/team3/SingletonDetectionRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/team3/SingletonDetectionRule.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,14 +65,14 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="d4b9204e69002d8d8b3f26b34aa295f7c6e858b2" />
+        <entry key="$PROJECT_DIR$" value="6ba8597a05daf648c158278dc77ae7c84979e20b" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {}
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
     <option name="recentBranches">
@@ -77,6 +82,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="detached3" />
+                    <option name="lastUsedInstant" value="1739984043" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="Please-work" />
                     <option name="lastUsedInstant" value="1739828445" />
@@ -113,31 +122,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.CSSE374_Team_3 [:Controller.main()].executor": "Run",
-    "Gradle.CSSE374_Team_3 [:Main.main()].executor": "Run",
-    "Gradle.CSSE374_Team_3 [:org.team3.Controller.main()].executor": "Run",
-    "Gradle.CSSE374_Team_3 [build].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "detached3",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/flannacj/Downloads/TryCode2CPS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/flannacj/IdeaProjects/CSSE374_Team_3/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.CSSE374_Team_3 [:Controller.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CSSE374_Team_3 [:Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CSSE374_Team_3 [:org.team3.Controller.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CSSE374_Team_3 [build].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;detached3&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/flannacj/Downloads/TryCode2CPS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/flannacj/IdeaProjects/CSSE374_Team_3/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.team3" />
@@ -278,6 +287,11 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">

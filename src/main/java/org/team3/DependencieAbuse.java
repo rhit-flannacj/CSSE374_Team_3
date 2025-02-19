@@ -6,4 +6,9 @@ public class DependencieAbuse implements Analyzer{
     public void formatClass(MyClass myClass) {
 
     }
+
+    @Override
+    public void setMax(int max) {
+        this.max = max;
+    }
 }

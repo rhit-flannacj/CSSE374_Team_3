@@ -26,6 +26,10 @@ public class ControllerDisplay {
         for(Analyzer rule: rules) {
              boxes.add(new JCheckBox(rule.getClass().getName().substring(rule.getClass().getName().lastIndexOf('.') + 1)));
         }
+        JLabel label1 = new JLabel("Enter max number of dependencies");
+        JTextField text1 = new JTextField();
+        JLabel label2 = new JLabel("Enter max number of singletons");
+        JTextField text2 = new JTextField();
 
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
@@ -33,6 +37,11 @@ public class ControllerDisplay {
         for(JCheckBox box : boxes) {
              panel.add(box);
         }
+
+        panel.add(label1);
+        panel.add(text1);
+        panel.add(label2);
+        panel.add(text2);
 
         frame.add(panel);
 
@@ -46,6 +55,12 @@ public class ControllerDisplay {
                     }
                 }
                 frame.dispose();
+                if(text1.getText()!=null) {
+                    rules.get(2).setMax(Integer.parseInt(text1.getText()));
+                }
+                if(text2.getText()!=null) {
+                    rules.get(3).setMax(Integer.parseInt(text2.getText()));
+                }
                 try {
                     Compiler.getInstance().createData(path, selected);
                 } catch (Exception ex) {
