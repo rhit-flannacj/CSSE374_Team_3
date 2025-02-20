@@ -15,18 +15,17 @@ public class SingeltonAbuse implements Analyzer {
             singletonClasses.add(myClass);
         }
         if (singletonClasses.size() > max) {
-            for (MyClass sc : singletonClasses) {
-                if (sc.additionalText == null || !sc.additionalText.contains("<singleton abuse>")) {
-                    sc.additionalText = (sc.additionalText == null ? "" : sc.additionalText) + " <singleton abuse>";
-                }
-
-            }
             if (!warningShown) {
                 warningShown = true;
                 SwingUtilities.invokeLater(() -> {
+                    StringBuilder message = new StringBuilder("<html>Singleton abuse count exceeded maximum allowed.<br>Affected classes:<br>");
+                    for (MyClass sc : singletonClasses) {
+                        message.append(sc.className).append("<br>");
+                    }
+                    message.append("</html>");
                     JFrame frame = new JFrame("Warning");
                     frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                    frame.add(new JLabel("Singleton abuse count exceeded maximum allowed."));
+                    frame.add(new JLabel(message.toString()));
                     frame.pack();
                     frame.setLocationRelativeTo(null);
                     frame.setVisible(true);

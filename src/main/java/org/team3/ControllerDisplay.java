@@ -49,25 +49,43 @@ public class ControllerDisplay {
         select.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for(JCheckBox box : boxes) {
-                    if(box.isSelected()) {
+                for (JCheckBox box : boxes) {
+                    if (box.isSelected()) {
                         selected.add(rules.get(boxes.indexOf(box)));
                     }
                 }
+
                 frame.dispose();
-                if(text1.getText()!=null) {
-                    rules.get(2).setMax(Integer.parseInt(text1.getText()));
-                }
-                if(text2.getText()!=null) {
-                    rules.get(3).setMax(Integer.parseInt(text2.getText()));
-                }
+
                 try {
+                    if (text1.getText() == null || text1.getText().trim().isEmpty()) {
+                        rules.get(2).setMax(Integer.MAX_VALUE); // Set to maximum (no restriction)
+                    } else {
+                        rules.get(2).setMax(Integer.parseInt(text1.getText().trim()));
+                    }
+
+                    if (text2.getText() == null || text2.getText().trim().isEmpty()) {
+                        rules.get(3).setMax(Integer.MAX_VALUE); // Set to maximum (no restriction)
+                    } else {
+                        rules.get(3).setMax(Integer.parseInt(text2.getText().trim()));
+                    }
+
                     Compiler.getInstance().createData(path, selected);
+                } catch (NumberFormatException ex) {
+                    // Handle invalid numeric input
+                    JOptionPane.showMessageDialog(frame,
+                            "Please enter valid numeric values for dependencies and singletons.",
+                            "Invalid Input",
+                            JOptionPane.ERROR_MESSAGE);
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }
             }
         });
+        System.out.println("Selected Rules:");
+        for (Analyzer rule : selected) {
+            System.out.println("Rule: " + rule.getClass().getName());
+        }
         frame.add(select);
         frame.setSize(300,300);
         frame.show();
